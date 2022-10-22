@@ -1,0 +1,136 @@
+*, ::after, ::before
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html
+    font-size: 62.5%
+
+body
+    font-family: 'Montserrat'
+    font-weight: 400
+    font-size: 1.6rem
+    color: #777777
+    letter-spacing: .2rem
+    padding: 5rem
+    background-color: white
+
+.container
+    background-color: #F7F7F7
+
+.header
+    position: relative
+    height: 95vh
+    background: url(../img/bal-background.jpg) center / cover no-repeat
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
+    &__logo
+        position: absolute
+        left: 5rem
+        top: 5rem
+        width: 8rem
+        height: 7rem
+    &__box
+        position: absolute
+        left: 50%
+        top: 40%
+        transform: translate(-50%, -50%)
+        text-align: center
+
+.title-first
+    color: white
+    font-family: 'Monserat',sans-serif
+    &__main
+        display: block
+        text-transform: uppercase
+        font-weight: 800
+        font-size: 5rem
+        line-height: 6rem
+        letter-spacing: 0.1rem
+        margin-bottom: 1rem
+        animation-name: leftToright
+        animation-duration: 1s
+        animation-delay: .7s
+        backface-visibility: hidden
+        animation-fill-mode: backwards
+        
+    &__secondary
+        display: block
+        font-weight: 600
+        font-size: 4rem
+        line-height: 4.8rem
+        letter-spacing: 1.5rem
+        animation-name: righttoleft
+        animation-duration: 1s
+        animation-delay: .7s
+        animation-timing-function: edge
+        margin-bottom: 6.5rem
+        backface-visibility: hidden
+        animation-fill-mode: backwards
+
+.btn
+    &:link, &:visited
+        text-transform: uppercase
+        color: #777
+        text-decoration: none
+        border-radius: 5rem
+        padding: 1.5rem 4rem
+        background: white
+        display: inline-block
+        transition: all .1s
+        position: relative
+        font-size: 2rem
+    &:hover
+        transform: translateY(-4px) 
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 1)
+        &::after
+            opacity: 0
+            transform: scale(1.5)
+    &:active
+        transform: translateY(-8px)
+    &::after
+        content: ""
+        text-decoration: none
+        width: 100%
+        height: 100%
+        background: white
+        border-radius: 5rem
+        display: inline-block
+        top: 0
+        left: 0
+        z-index: -1
+        position: absolute
+        transition: all .2s
+    &_animated
+        animation: btntoup .4s ease-out .7s
+        animation-fill-mode: backwards
+
+        
+@keyframes btntoup
+    0%
+        opacity: 0
+        transform: translateY(50px) 
+    100%
+        opacity: 1
+        transform: translateY(0px)
+        
+
+@keyframes leftToright
+    0%
+        opacity: 0
+        transform: translateX(-300px)
+    70%
+        transform: translateX(100px)  
+    100%
+        opacity: 1
+        transform: translateX(0px)
+            
+@keyframes righttoleft
+    0%
+        opacity: 0
+        transform: translateX(300px)
+    70%
+        transform: translateX(-100px)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+           
